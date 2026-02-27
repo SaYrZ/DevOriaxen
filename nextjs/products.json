@@ -1,21 +1,123 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": "1",
+      "linkId": "a1b2c3d4",
+      "title": "Discord Moderation Bot",
+      "category": "Discord Bot",
+      "tags": [
+        "Discord Bot",
+        "Moderation",
+        "Automation"
+      ],
+      "description": "Staff Management Bot - A comprehensive Discord bot for managing staff operations, moderation, and analytics.",
+      "fullDescription": "The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows. Features include auto-moderation, reaction roles, music playback, leveling system, and comprehensive logging.",
+      "thumbnail": "test.png",
+      "price": "$7.99/month",
+      "status": "available",
+      "order": 1,
+      "specifications": {
+        "Version": "2.5.0",
+        "Uptime": "99.9%",
+        "Support": "24/7 Discord",
+        "Setup": "5 minutes"
+      },
+      "reviews": [
         {
-            "id": "1",
-            "title": "Discord Moderation Bot",
-            "category": "Discord Bot",
-            "description": "Staff Management Bot A comprehensive Discord bot for managing staff operations, moderation, and analytics. The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows.",
-            "thumbnail": "test.png",
-            "price": "$7.99 / Per month",
-            "status": "available",
-            "linkId": "4371768e",
-            "tags": [
-                "Discord Bot"
-            ],
-            "reviews": [],
-            "order": 1,
-            "fullDescription": "Staff Management Bot A comprehensive Discord bot for managing staff operations, moderation, and analytics. The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows.",
-            "specifications": {}
+          "id": "1",
+          "reviewerName": "ServerOwner123",
+          "rating": 5,
+          "reviewText": "Best moderation bot I've ever used. The auto-moderation features are incredible.",
+          "date": "2024-01-15"
+        },
+        {
+          "id": "2",
+          "reviewerName": "ModTeamLead",
+          "rating": 4,
+          "reviewText": "Great bot, but could use more customization options. Overall very satisfied.",
+          "date": "2024-01-10"
         }
-    ]
+      ]
+    },
+    {
+      "id": "2",
+      "linkId": "e5f6g7h8",
+      "title": "Music Bot Pro",
+      "category": "Discord Bot",
+      "tags": [
+        "Discord Bot",
+        "Music",
+        "Entertainment"
+      ],
+      "description": "Premium music bot with high-quality audio streaming and advanced queue management.",
+      "fullDescription": "Experience crystal-clear music playback with our advanced Discord music bot. Features include high-quality audio streaming, custom playlists, DJ commands, audio effects, and seamless integration with your Discord server.",
+      "thumbnail": "test.png",
+      "price": "$4.99/month",
+      "status": "available",
+      "order": 2,
+      "specifications": {
+        "Version": "1.8.0",
+        "Uptime": "99.5%",
+        "Support": "Discord Community",
+        "Setup": "10 minutes"
+      },
+      "reviews": [
+        {
+          "id": "1",
+          "reviewerName": "MusicLover",
+          "rating": 5,
+          "reviewText": "Amazing sound quality and very easy to use!",
+          "date": "2024-02-01"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "linkId": "i9j0k1l2",
+      "title": "Leveling System",
+      "category": "Discord Bot",
+      "tags": [
+        "Discord Bot",
+        "Gamification",
+        "Engagement"
+      ],
+      "description": "Engage your community with a complete leveling and rewards system.",
+      "fullDescription": "Boost server engagement with our comprehensive leveling system. Users earn XP through messages, voice activity, and interactions. Custom roles, rewards, leaderboards, and achievements keep your community active and motivated.",
+      "thumbnail": "test.png",
+      "price": "$3.99/month",
+      "status": "available",
+      "order": 3,
+      "specifications": {
+        "Version": "2.0.0",
+        "Uptime": "99.8%",
+        "Support": "Email",
+        "Setup": "15 minutes"
+      },
+      "reviews": []
+    },
+    {
+      "id": "4",
+      "linkId": "m3n4o5p6",
+      "title": "Custom Web Dashboard",
+      "category": "Web Application",
+      "tags": [
+        "Web App",
+        "Dashboard",
+        "Analytics"
+      ],
+      "description": "Beautiful analytics dashboard for your Discord server management.",
+      "fullDescription": "A modern, responsive web dashboard that integrates with your Discord bot. Monitor server statistics, manage settings, view analytics, and control your bot from anywhere with a beautiful intuitive interface.",
+      "thumbnail": "test.png",
+      "price": "$9.99/month",
+      "status": "available",
+      "order": 4,
+      "specifications": {
+        "Version": "3.0.0",
+        "Uptime": "99.9%",
+        "Support": "Priority Email",
+        "Setup": "30 minutes"
+      },
+      "reviews": []
+    }
+  ]
 }
