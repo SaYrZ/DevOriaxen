@@ -2,12 +2,42 @@
     "products": [
         {
             "id": "1",
+            "linkId": "a1b2c3d4",
             "title": "Discord Moderation Bot",
             "category": "Discord Bot",
-            "description": "Staff Management Bot A comprehensive Discord bot for managing staff operations, moderation, and analytics. The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows.",
+            "tags": [
+                "Discord Bot",
+                "Moderation",
+                "Automation"
+            ],
+            "description": "Staff Management Bot - A comprehensive Discord bot for managing staff operations, moderation, and analytics.",
+            "fullDescription": "The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows. Features include auto-moderation, reaction roles, music playback, leveling system, and comprehensive logging.",
             "thumbnail": "test.png",
-            "price": "$7.99 / Per month",
-            "status": "available"
+            "price": "$7.99/month",
+            "status": "available",
+            "order": 1,
+            "specifications": {
+                "Version": "2.5.0",
+                "Uptime": "99.9%",
+                "Support": "24/7 Discord",
+                "Setup": "5 minutes"
+            },
+            "reviews": [
+                {
+                    "id": "1",
+                    "reviewerName": "ServerOwner123",
+                    "rating": 5,
+                    "reviewText": "Best moderation bot I've ever used. The auto-moderation features are incredible.",
+                    "date": "2024-01-15"
+                },
+                {
+                    "id": "2",
+                    "reviewerName": "ModTeamLead",
+                    "rating": 4,
+                    "reviewText": "Great bot, but could use more customization options. Overall very satisfied.",
+                    "date": "2024-01-10"
+                }
+            ]
         }
     ]
 }
