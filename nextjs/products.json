@@ -1,0 +1,21 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "title": "Discord Moderation Bot",
+            "category": "Discord Bot",
+            "description": "Staff Management Bot A comprehensive Discord bot for managing staff operations, moderation, and analytics. The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows.",
+            "thumbnail": "test.png",
+            "price": "$7.99 / Per month",
+            "status": "available",
+            "linkId": "4371768e",
+            "tags": [
+                "Discord Bot"
+            ],
+            "reviews": [],
+            "order": 1,
+            "fullDescription": "Staff Management Bot A comprehensive Discord bot for managing staff operations, moderation, and analytics. The advanced staff management system designed for large-scale Discord communities with complete moderation control, performance tracking, and automated workflows.",
+            "specifications": {}
+        }
+    ]
+}
