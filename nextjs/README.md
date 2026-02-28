@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevOriaxen - Next.js Web Application
+
+A modern, responsive Next.js website for DevOriaxen digital solutions studio with smooth animations and hover effects.
+
+## Features
+
+- 🎨 Modern dark theme design with gradient orbs and grid patterns
+- ✨ Smooth animations and hover effects
+- 📱 Fully responsive for mobile devices
+- 🛒 Product catalog with search, filter, and tag functionality
+- ⭐ Product ratings and reviews system
+- 🔒 SEO optimized
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + Custom CSS
+- **Fonts:** Space Grotesk & Inter (Google Fonts)
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+```
+nextjs/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── products/
+│   │   │       ├── route.ts         # Get all products
+│   │   │       └── [linkId]/
+│   │   │           └── route.ts      # Get single product
+│   │   ├── product/
+│   │   │   └── [linkId]/
+│   │   │       └── page.tsx         # Product detail page
+│   │   ├── globals.css               # Global styles
+│   │   ├── layout.tsx               # Root layout
+│   │   └── page.tsx                 # Home page
+│   ├── lib/
+│   │   └── products.ts              # Product data utilities
+│   └── types/
+│       └── index.ts                  # TypeScript types
+├── products.json                     # Product data
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding Products
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Edit `products.json` to add or modify products:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```json
+{
+  "products": [
+    {
+      "id": "1",
+      "linkId": "unique-id",
+      "title": "Product Name",
+      "category": "Category",
+      "tags": ["tag1", "tag2"],
+      "description": "Short description",
+      "fullDescription": "Full description",
+      "thumbnail": "image-url",
+      "price": "$9.99/month",
+      "status": "available",
+      "order": 1,
+      "specifications": {
+        "Key": "Value"
+      },
+      "reviews": []
+    }
+  ]
+}
+```
 
-## Learn More
+## API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+- `GET /api/products` - Get all products (supports `tag`, `search`, `sort` query params)
+- `GET /api/products/[linkId]` - Get single product by ID
+- `POST /api/products/[linkId]/reviews` - Add review to product
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Building for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+Then start the production server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+- **Colors:** Modify CSS variables in `src/app/globals.css`
+- **Fonts:** Update in `src/app/layout.tsx`
+- **Products:** Edit `products.json`

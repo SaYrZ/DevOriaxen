@@ -16,7 +16,9 @@ function StarRating({ rating }: { rating: number }) {
           key={i}
           className={`star ${i < fullStars || (i === fullStars && hasHalf) ? "filled" : ""}`}
         >
-          {i < fullStars || (i === fullStars && hasHalf) ? "★" : "☆"}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill={i < fullStars || (i === fullStars && hasHalf) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
         </span>
       ))}
     </div>
@@ -35,12 +37,6 @@ export default function ProductPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [reviewForm, setReviewForm] = useState({
-    reviewerName: "",
-    rating: 5,
-    reviewText: "",
-  });
-  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -61,36 +57,6 @@ export default function ProductPage() {
     }
     fetchProduct();
   }, [linkId]);
-
-  async function handleReviewSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!reviewForm.reviewerName || !reviewForm.reviewText) return;
-
-    setSubmitting(true);
-    try {
-      const res = await fetch(`/api/products/${linkId}/reviews`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(reviewForm),
-      });
-      if (res.ok) {
-        const newReview = await res.json();
-        setProduct((prev) =>
-          prev
-            ? {
-                ...prev,
-                reviews: [...prev.reviews, newReview],
-              }
-            : null
-        );
-        setReviewForm({ reviewerName: "", rating: 5, reviewText: "" });
-      }
-    } catch (err) {
-      console.error("Error submitting review:", err);
-    } finally {
-      setSubmitting(false);
-    }
-  }
 
   if (loading) {
     return (
@@ -152,7 +118,11 @@ export default function ProductPage() {
 
       <div className="product-detail">
         <Link href="/#products" className="back-link">
-          ← Back to Products
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Back to Products
         </Link>
 
         <div className="product-header">
@@ -226,54 +196,8 @@ export default function ProductPage() {
             )}
           </div>
 
-          {/* Add Review Form */}
-          <div className="review-form" style={{ marginTop: "2rem" }}>
-            <h3 className="section-title">Add a Review</h3>
-            <form onSubmit={handleReviewSubmit}>
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="search-input"
-                  value={reviewForm.reviewerName}
-                  onChange={(e) =>
-                    setReviewForm({ ...reviewForm, reviewerName: e.target.value })
-                  }
-                  required
-                />
-                <select
-                  className="filter-select"
-                  value={reviewForm.rating}
-                  onChange={(e) =>
-                    setReviewForm({ ...reviewForm, rating: Number(e.target.value) })
-                  }
-                >
-                  {[5, 4, 3, 2, 1].map((r) => (
-                    <option key={r} value={r}>
-                      {r} Star{r !== 1 ? "s" : ""}
-                    </option>
-                  ))}
-                </select>
-                <textarea
-                  placeholder="Your review..."
-                  className="search-input"
-                  rows={4}
-                  value={reviewForm.reviewText}
-                  onChange={(e) =>
-                    setReviewForm({ ...reviewForm, reviewText: e.target.value })
-                  }
-                  required
-                />
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  disabled={submitting}
-                >
-                  {submitting ? "Submitting..." : "Submit Review"}
-                </button>
-              </div>
-            </form>
-          </div>
+          {/* No Reviews Message */}
+          <p className="no-reviews">No reviews yet.</p>
         </div>
       </div>
     </>
